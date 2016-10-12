@@ -1,4 +1,31 @@
-﻿[CmdletBinding()]
+﻿<#
+.SYNOPSIS
+Gets application and services list from remote computers
+
+.DESCRIPTION
+Gets application and services list from remote computers
+
+.PARAMETER ComputerList
+Path to text file with computernames. One computername per line.
+
+.PARAMETER Credentials
+Credentials for connecting to remote computers
+
+.PARAMETER OutputPath
+PAth where reports will be saved
+
+.PARAMETER ReportOwner
+Person who created reports
+
+.PARAMETER LogName
+Log file name
+
+.EXAMPLE
+.\computerReport.ps1 -ComputerList .\pcs.txt -OutputPath .\Reports -LogName 'pclog.log' -Credentials (Get-Credential)
+
+
+#>
+[CmdletBinding()]
 param ([parameter(Mandatory=$true)]
         [string]$ComputerList,
         [System.Management.Automation.PSCredential]$Credentials,
